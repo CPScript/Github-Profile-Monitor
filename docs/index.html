@@ -483,16 +483,15 @@
         class GitHubFollowerDashboard {
             constructor() {
                 this.data = {};
-                // Fix the base URL calculation for GitHub Pages
-                // Current URL: https://cpscript.github.io/Github-Profile-Monitor/dashboard/
-                // We want: https://cpscript.github.io/Github-Profile-Monitor/
+                // Use GitHub raw content URLs instead of GitHub Pages
+                // Dashboard URL: https://cpscript.github.io/Github-Profile-Monitor/dashboard/
+                // Raw content: https://raw.githubusercontent.com/CPScript/Github-Profile-Monitor/main/data/
                 const pathParts = window.location.pathname.split('/').filter(p => p);
-                if (pathParts.length > 1 && pathParts[pathParts.length - 1] === 'dashboard') {
-                    // Remove 'dashboard' from the end to get the repo base
-                    this.baseUrl = window.location.origin + '/' + pathParts.slice(0, -1).join('/');
-                } else if (pathParts.length > 0) {
-                    // For other GitHub Pages structures
-                    this.baseUrl = window.location.origin + '/' + pathParts[0];
+                if (pathParts.length > 0) {
+                    // Extract username and repo from GitHub Pages URL
+                    const subdomain = window.location.hostname.split('.')[0]; // cpscript
+                    const repoName = pathParts[0]; // Github-Profile-Monitor
+                    this.baseUrl = `https://raw.githubusercontent.com/${subdomain}/${repoName}/main`;
                 } else {
                     // Fallback for local development
                     this.baseUrl = window.location.origin;

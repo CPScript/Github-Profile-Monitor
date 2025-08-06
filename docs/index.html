@@ -484,16 +484,21 @@
             constructor() {
                 this.data = {};
                 // Fix the base URL calculation for GitHub Pages
+                // Current URL: https://cpscript.github.io/Github-Profile-Monitor/dashboard/
+                // We want: https://cpscript.github.io/Github-Profile-Monitor/
                 const pathParts = window.location.pathname.split('/').filter(p => p);
-                if (pathParts.length > 0) {
-                    // For GitHub Pages: https://username.github.io/repo-name/dashboard/
-                    // We want: https://username.github.io/repo-name/
+                if (pathParts.length > 1 && pathParts[pathParts.length - 1] === 'dashboard') {
+                    // Remove 'dashboard' from the end to get the repo base
+                    this.baseUrl = window.location.origin + '/' + pathParts.slice(0, -1).join('/');
+                } else if (pathParts.length > 0) {
+                    // For other GitHub Pages structures
                     this.baseUrl = window.location.origin + '/' + pathParts[0];
                 } else {
                     // Fallback for local development
                     this.baseUrl = window.location.origin;
                 }
                 console.log('Base URL:', this.baseUrl);
+                console.log('Current location:', window.location.href);
                 this.init();
             }
 
@@ -541,18 +546,22 @@
             }
 
             setupEventListeners() {
+                // Tab switching
                 document.querySelectorAll('.tab').forEach(tab => {
                     tab.addEventListener('click', (e) => {
                         const targetTab = e.target.dataset.tab;
                         
+                        // Remove active class from all tabs and content
                         document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
                         document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
                         
+                        // Add active class to clicked tab and corresponding content
                         e.target.classList.add('active');
                         document.getElementById(targetTab).classList.add('active');
                     });
                 });
 
+                // Auto-refresh every 5 minutes
                 setInterval(() => this.refresh(), 300000);
             }
 
@@ -617,6 +626,7 @@
                     if (element) {
                         element.textContent = value;
                         
+                        // Apply color coding for growth
                         if (id === 'growth-7d') {
                             const growthValue = stats.growth_7d || 0;
                             element.className = `stat-value ${growthValue > 0 ? 'positive' : growthValue < 0 ? 'negative' : 'neutral'}`;
@@ -629,10 +639,13 @@
                 const changes = this.data.latest.changes || { new_followers: [], unfollowers: [] };
                 const allFollowers = this.data.followers || [];
 
+                // Render new followers
                 this.renderFollowerList('new-followers-list', changes.new_followers, 'No new followers recently');
 
+                // Render unfollowers
                 this.renderFollowerList('unfollowers-list', changes.unfollowers, 'No unfollowers recently');
 
+                // Render all followers (limited to first 50 for performance)
                 this.renderFollowerList('all-followers-list', allFollowers.slice(0, 50), 'No followers data available');
             }
 
@@ -663,6 +676,7 @@
             }
         }
 
+        // Initialize dashboard when DOM is loaded
         document.addEventListener('DOMContentLoaded', () => {
             new GitHubFollowerDashboard();
         });

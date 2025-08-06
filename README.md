@@ -58,7 +58,7 @@ Display the items on the users profile | ✖️
 
 1. In your repository, go to Settings > Secrets and Variables > Actions
 2. Add the following secrets:
-   - `GITHUB_TOKEN`: Your personal access token from step 2
+   - `TOKEN`: Your personal access token from step 2 (**Name your token** `TOKEN` or edit the code found though the tree to match your new tokens name)
 
 ### 4. GitHub Pages Setup
 
@@ -204,7 +204,7 @@ The dashboard uses CSS custom properties for theming. Modify the `:root` variabl
 
 1. **Workflow fails with "Bad credentials"**
    - Verify your GitHub token has the correct scopes
-   - Ensure the token is added as a repository secret named `GITHUB_TOKEN`
+   - Ensure the token is added as a repository secret named `TOKEN`
 
 2. **No data appearing on dashboard**
    - Check that the workflow has run successfully in the Actions tab

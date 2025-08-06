@@ -1,11 +1,11 @@
 # Github User Monitor
 
-A comprehensive system for tracking GitHub followers with automated data collection, change detection, and a sleek dashboard interface. The system uses GitHub Actions for automation and GitHub Pages for hosting.
+A system for tracking GitHub followers with automated data collection, change detection, and a sleek dashboard interface. The system uses GitHub Actions for automation and GitHub Pages for hosting.
 
 ## Features
 
 - **Automated Follower Tracking**: Monitors follower changes every 6 hours via GitHub Actions
-- **Change Detection**: Identifies new followers and unfollowers with detailed logging
+- **Change Detection**: Identifies new followers and unfollowers with logging
 - **Repository Traffic**: Tracks profile repository views and clones (when available)
 - **Historical Data**: Maintains up to 100 historical snapshots with trend analysis
 - **Live Dashboard**: GitHub-styled responsive web interface

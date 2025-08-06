@@ -34,7 +34,7 @@ Display the items on the users profile | ✖️
 
 ### 1. Repository Setup
 
-1. Create a new repository named `github-follower-monitor` (or any name) (`You can also fork this repository`) The repository must be **public** for GitHub Pages to work (unless you have GitHub Pro)
+1. Create a new repository named `Github-Profile-Monitor` (or any name) (`You can also fork this repository`) The repository must be **public** for GitHub Pages to work (unless you have GitHub Pro)
 2. Clone the repository locally
 3. Copy all provided files to your repository:
    ```bash

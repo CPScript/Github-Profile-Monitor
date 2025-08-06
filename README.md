@@ -1,4 +1,4 @@
-# Github User Monitor
+# Github Profile Monitor
 
 A system for tracking GitHub followers with automated data collection, change detection, and a sleek dashboard interface. The system uses GitHub Actions for automation and GitHub Pages for hosting.
 

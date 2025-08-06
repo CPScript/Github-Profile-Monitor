@@ -242,10 +242,10 @@ class GitHubMonitor {
 // Main execution
 async function main() {
     const username = process.env.GITHUB_USERNAME;
-    const token = process.env.GITHUB_TOKEN;
+    const token = process.env.TOKEN;
 
     if (!username || !token) {
-        console.error('Error: GITHUB_USERNAME and GITHUB_TOKEN environment variables are required');
+        console.error('Error: GITHUB_USERNAME and TOKEN environment variables are required');
         process.exit(1);
     }
 

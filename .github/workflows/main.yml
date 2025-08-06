@@ -32,7 +32,7 @@ jobs:
       - name: Monitor followers and update data
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }} # REPLACE WITH YOUR TOKEN NAME (Default "TOKEN")
-          CPScript: ${{ github.repository_owner }} # REPLACE WITH YOUR NAME (Mine for example)
+          GITHUB_USERNAME: ${{ github.repository_owner }} 
         run: |
           node scripts/monitor.js
 

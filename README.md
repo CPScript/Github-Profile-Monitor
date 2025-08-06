@@ -16,6 +16,12 @@ Display the items on the users profile | ✖️
 - **REST API**: JSON endpoints for external integration
 - **Zero Dependencies**: Pure JavaScript implementation using only Node.js built-ins
 
+## Images
+
+![image](https://github.com/CPScript/Github-Profile-Monitor/blob/main/image/Image.PNG)
+![image](https://github.com/CPScript/Github-Profile-Monitor/blob/main/image/Image2.PNG)
+
+
 ## System Architecture
 
 ```

@@ -1,15 +1,15 @@
 {
-  "name": "github-follower-monitor",
+  "name": "Github-Profile-Monitor",
   "version": "1.0.0",
-  "description": "GitHub follower monitoring system with automated tracking and dashboard",
+  "description": "GitHub monitoring system with automated tracking and dashboard",
   "main": "scripts/monitor.js",
   "scripts": {
     "monitor": "node scripts/monitor.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/USERNAME/github-follower-monitor.git"
+    "url": "git+https://github.com/CPScript/Github-Profile-Monitor.git"
   },
   "keywords": [
     "github",
@@ -18,12 +18,12 @@
     "analytics",
     "dashboard"
   ],
-  "author": "Your Name",
+  "author": "CPScript",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/USERNAME/github-follower-monitor/issues"
+    "url": "https://github.com/CPScript/Github-Profile-Monitor/issues"
   },
-  "homepage": "https://github.com/USERNAME/github-follower-monitor#readme",
+  "homepage": "https://CPScript/Github-Profile-Monitor#readme",
   "engines": {
     "node": ">=14.0.0"
   }

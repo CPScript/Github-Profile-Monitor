@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Github User Monitor</title>
+    <title>Github Profile Monitor</title>
     <style>
         :root {
             --color-canvas-default: #0d1117;
@@ -343,9 +343,6 @@
                 </div>
                 <nav class="nav">
                     <a href="#dashboard" class="active">Dashboard</a>
-                    <a href="#followers">Followers</a>
-                    <a href="#history">History</a>
-                    <a href="#api">API</a>
                 </nav>
             </div>
         </div>
@@ -483,14 +480,14 @@
         class GitHubFollowerDashboard {
             constructor() {
                 this.data = {};
-                // Use GitHub raw content URLs instead of GitHub Pages
-                // Dashboard URL: https://cpscript.github.io/Github-Profile-Monitor/dashboard/
-                // Raw content: https://raw.githubusercontent.com/CPScript/Github-Profile-Monitor/main/data/
+                // Use GitHub raw content URLs instead of GitHub Pages (issue i made)
+                // Dashboard URL: https://USERNAME.github.io/Github-Profile-Monitor/dashboard/
+                // Raw content: https://raw.githubusercontent.com/USERNAME/Github-Profile-Monitor/main/data/ (fix for such issue)
                 const pathParts = window.location.pathname.split('/').filter(p => p);
                 if (pathParts.length > 0) {
                     // Extract username and repo from GitHub Pages URL
-                    const subdomain = window.location.hostname.split('.')[0]; // cpscript
-                    const repoName = pathParts[0]; // Github-Profile-Monitor
+                    const subdomain = window.location.hostname.split('.')[0]; // username (dont edit)
+                    const repoName = pathParts[0]; // Repo Name (dont edit)
                     this.baseUrl = `https://raw.githubusercontent.com/${subdomain}/${repoName}/main`;
                 } else {
                     // Fallback for local development
@@ -675,7 +672,7 @@
             }
         }
 
-        // Initialize dashboard when DOM is loaded
+        // Initialize dashboard when DOM is loaded :P
         document.addEventListener('DOMContentLoaded', () => {
             new GitHubFollowerDashboard();
         });

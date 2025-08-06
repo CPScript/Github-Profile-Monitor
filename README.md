@@ -30,7 +30,7 @@ A system for tracking GitHub followers with automated data collection, change de
 
 ### 1. Repository Setup
 
-1. Create a new repository named `github-follower-monitor` (or any name)
+1. Create a new repository named `github-follower-monitor` (or any name) (`You can also fork this repository`)
 2. Clone the repository locally
 3. Copy all provided files to your repository:
    ```bash

@@ -19,7 +19,7 @@ Display the items on the users profile | ✖️
 ## System Architecture
 
 ```
-├── .github/workflows/monitor_followers.yml  # GitHub Actions automation
+├── .github/workflows/main.yml  # GitHub Actions automation
 ├── scripts/monitor.js                       # Core monitoring logic
 ├── docs/index.html                     # Web dashboard
 ├── data/                                    # Generated data files
@@ -39,7 +39,7 @@ Display the items on the users profile | ✖️
 3. Copy all provided files to your repository:
    ```bash
    mkdir -p .github/workflows scripts dashboard data
-   # Copy the workflow file to .github/workflows/monitor_followers.yml
+   # Copy the workflow file to .github/workflows/main.yml
    # Copy the monitor script to scripts/monitor.js
    # Copy the dashboard to docs/index.html
    # Copy package.json to root
@@ -77,7 +77,7 @@ Display the items on the users profile | ✖️
 
 ## File Structure Details
 
-### GitHub Actions Workflow (`.github/workflows/monitor_followers.yml`)
+### GitHub Actions Workflow (`.github/workflows/main.yml`)
 - Runs every 6 hours automatically
 - Can be triggered manually
 - Executes the monitoring script
@@ -178,7 +178,7 @@ console.log(`New followers: ${data.changes.new_followers.length}`);
 ## Customization
 
 ### Monitoring Frequency
-Edit the cron expression in `.github/workflows/monitor_followers.yml`:
+Edit the cron expression in `.github/workflows/main.yml`:
 ```yaml
 schedule:
   - cron: '0 */6 * * *'  # Every 6 hours

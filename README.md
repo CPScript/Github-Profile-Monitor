@@ -21,7 +21,7 @@ Display the items on the users profile | ✖️
 ```
 ├── .github/workflows/monitor_followers.yml  # GitHub Actions automation
 ├── scripts/monitor.js                       # Core monitoring logic
-├── dashboard/index.html                     # Web dashboard
+├── docs/index.html                     # Web dashboard
 ├── data/                                    # Generated data files
 │   ├── latest.json                         # Current snapshot
 │   ├── stats.json                          # Summary statistics
@@ -41,7 +41,7 @@ Display the items on the users profile | ✖️
    mkdir -p .github/workflows scripts dashboard data
    # Copy the workflow file to .github/workflows/monitor_followers.yml
    # Copy the monitor script to scripts/monitor.js
-   # Copy the dashboard to dashboard/index.html
+   # Copy the dashboard to docs/index.html
    # Copy package.json to root
    ```
 
@@ -65,7 +65,7 @@ Display the items on the users profile | ✖️
 1. Go to Settings > Pages
 2. Source: Deploy from a branch
 3. Branch: `main` (or your default branch)
-4. Folder: `/dashboard`
+4. Folder: `/docs`
 5. Save the configuration
 
 ### 5. Initial Run
@@ -93,7 +93,7 @@ Core monitoring logic implementing:
 - **Error Handling**: Comprehensive error handling with informative logging
 - **Rate Limit Awareness**: Handles GitHub API rate limits appropriately
 
-### Dashboard (`dashboard/index.html`)
+### Dashboard (`docs/index.html`)
 Single-file web application featuring:
 - **GitHub-Styled UI**: Matches GitHub's design system with CSS custom properties
 - **Responsive Design**: Mobile-friendly responsive layout

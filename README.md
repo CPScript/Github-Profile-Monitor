@@ -2,6 +2,10 @@
 
 A system for tracking GitHub followers with automated data collection, change detection, and a sleek dashboard interface. The system uses GitHub Actions for automation and GitHub Pages for hosting.
 
+TO DO | Status
+---|---
+Display the items on the users profile | ✖️
+
 ## Features
 
 - **Automated Follower Tracking**: Monitors follower changes every 6 hours via GitHub Actions
